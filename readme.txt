@@ -17,7 +17,7 @@ HTTP_STATUS code if the token is not define dor invalid, and a 200.
 
 Returns all a list with platform and module information.
 
-[url: /wp-json/anxapi/v1/modules/?ACCESS_TOKEN=custom_access_token]
+        /wp-json/anxapi/v1/modules/?ACCESS_TOKEN=custom_access_token
 
 
 = Live monitoring =
@@ -25,7 +25,7 @@ Returns all a list with platform and module information.
 This endpoint can be used to verify if the application is alive and working correctly. It checks if the database
 connection is working and makes a query for users. It allows to register custom check by using hooks.
 
-[url: http://localhost/wp-json/anxapi/v1/up/?ACCESS_TOKEN=custom_access_token]
+        /wp-json/anxapi/v1/up/?ACCESS_TOKEN=custom_access_token
 
 
 == Installation ==

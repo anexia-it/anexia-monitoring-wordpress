@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Anexia Monitoring
-Plugin URI:
+Plugin URI: https://github.com/anx-hnezbeda/anexia-monitoring-wordpress
 Description: A WordPress plugin used to monitor updates for core, plugins and themes. It can be also used to check if the website
 is alive and working correctly.
 Version: 1.0

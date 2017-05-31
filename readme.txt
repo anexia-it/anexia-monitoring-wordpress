@@ -29,7 +29,7 @@ connection is working and makes a query for users. It allows to register custom 
 
 
 == Installation ==
-I the projects wp-config.php add the access token configuration:
+In the projects wp-config.php add the access token configuration:
 
 	define(\'ANX_MONITORING_ACCESS_TOKEN\', \'custom_access_token\');
 

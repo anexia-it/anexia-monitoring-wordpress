@@ -7,7 +7,7 @@ is alive and working correctly.
 
 Install the plugin by copying all files into the plugins directory.
 
-I the projects wp-config.php add the access token configuration:
+In the projects wp-config.php add the access token configuration:
 ```
 define('ANX_MONITORING_ACCESS_TOKEN', 'custom_access_token');
 ```

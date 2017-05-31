@@ -17,19 +17,24 @@ HTTP_STATUS code if the token is not define dor invalid, and a 200.
 
 Returns all a list with platform and module information.
 
-	/wp-json/anxapi/v1/modules/?ACCESS_TOKEN=custom_access_token
+** Active permalinks **
+	/wp-json/anxapi/v1/modules/?access_token=custom_access_token
 
+** Default **
+	/?rest_route=/anxapi/v1/modules/&access_token=custom_access_token
 
 = Live monitoring =
 
 This endpoint can be used to verify if the application is alive and working correctly. It checks if the database
 connection is working and makes a query for users. It allows to register custom check by using hooks.
 
-	/wp-json/anxapi/v1/up/?ACCESS_TOKEN=custom_access_token
+** Active permalinks **
+	/wp-json/anxapi/v1/up/?access_token=custom_access_token
 
+** Default **
+	/?rest_route=/anxapi/v1/up/&access_token=custom_access_token
 
 == Installation ==
 In the projects wp-config.php add the access token configuration:
 
 	define(\'ANX_MONITORING_ACCESS_TOKEN\', \'custom_access_token\');
-

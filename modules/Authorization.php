@@ -20,7 +20,7 @@ class Authorization {
         $params = $request->get_params();
 
         // Access token must be in GET params
-        if (!isset($params['ACCESS_TOKEN'])) {
+        if (!isset($params['access_token'])) {
             return false;
         }
 
@@ -30,7 +30,7 @@ class Authorization {
         }
 
         // Check if access token is correct
-        if ($params['ACCESS_TOKEN'] !== ANX_MONITORING_ACCESS_TOKEN) {
+        if ($params['access_token'] !== ANX_MONITORING_ACCESS_TOKEN) {
             return false;
         }
 

@@ -1,9 +1,14 @@
 <?php
+namespace AnxMonitoring;
+
+use \WP_REST_Response;
 
 /**
- * Class AnxMonitoring_VersionMonitoring
+ * Class VersionMonitoring
+ *
+ * @package AnxMonitoring
  */
-class AnxMonitoring_VersionMonitoring {
+class VersionMonitoring {
     /**
      * Get theme related information and updates
      *
@@ -115,7 +120,7 @@ class AnxMonitoring_VersionMonitoring {
         return array(
             'platform' => 'php',
             'platform_version' => phpversion(),
-            'framework' => 'WordPress',
+            'framework' => 'wordpress',
             'framework_installed_version' => $updateCore->version_checked,
             'framework_newest_version' => (!empty($updateCore->updates)) ? $updateCore->updates[0]->version : $updateCore->version_checked
         );
@@ -129,7 +134,7 @@ class AnxMonitoring_VersionMonitoring {
      */
     public static function getUpdates($request) {
         // Perform monitor check for valid access token
-        if (AnxMonitoring_Authorization::checkAccessToken($request)) {
+        if (Authorization::checkAccessToken($request)) {
             return new WP_REST_Response(
                 [
                     'runtime' => self::getRuntimeData(),
@@ -139,6 +144,6 @@ class AnxMonitoring_VersionMonitoring {
             );
         }
 
-        return AnxMonitoring_Authorization::notAuthorized();
+        return Authorization::notAuthorized();
     }
 }

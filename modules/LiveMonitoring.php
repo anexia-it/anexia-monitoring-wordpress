@@ -1,9 +1,14 @@
 <?php
+namespace AnxMonitoring;
+
+use WP_User_Query;
 
 /**
- * Class AnxMonitoring_LiveMonitoring
+ * Class LiveMonitoring
+ *
+ * @package AnxMonitoring
  */
-class AnxMonitoring_LiveMonitoring {
+class LiveMonitoring {
 
     /**
      * Simple method that check if the WordPress installation is alive and working correctly
@@ -22,7 +27,7 @@ class AnxMonitoring_LiveMonitoring {
         global $wpdb;
 
         // Access check
-        if (!AnxMonitoring_Authorization::checkAccessToken($request)) {
+        if (!Authorization::checkAccessToken($request)) {
             http_response_code(401);
             echo 'You are not authorized to do this';
             die();

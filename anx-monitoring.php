@@ -7,7 +7,7 @@ is alive and working correctly.
 Version: 1.0
 Author: Anexia
 Author URI: http://www.anexia-it.com
-Text Domain: anexia-monitoring
+Text Domain: anx-monitoring
 License: MIT
 */
 
@@ -20,9 +20,9 @@ if ( !function_exists( 'add_action' ) ) {
 /**
  * Load plugin class files
  */
-include_once('modules/authorization.php');
-include_once('modules/version-monitoring.php');
-include_once('modules/live-monitoring.php');
+include_once('modules/Authorization.php');
+include_once('modules/VersionMonitoring.php');
+include_once('modules/LiveMonitoring.php');
 
 /**
  * CORS Headers
@@ -43,10 +43,13 @@ add_action( 'rest_api_init', function () {
      */
     register_rest_route(
         $namespace, '/modules',
-        array(
+        [
             'methods' => 'GET',
-            'callback' => 'AnxMonitoring_VersionMonitoring::getUpdates',
-        )
+            'callback' => [
+                new AnxMonitoring\VersionMonitoring(),
+                'getUpdates',
+            ]
+        ]
     );
 
     /**
@@ -56,9 +59,12 @@ add_action( 'rest_api_init', function () {
      */
     register_rest_route(
         $namespace, '/up',
-        array(
+        [
             'methods' => 'GET',
-            'callback' => 'AnxMonitoring_LiveMonitoring::upCheck',
-        )
+            'callback' => [
+                new AnxMonitoring\LiveMonitoring(),
+                'upCheck',
+            ],
+        ]
     );
 });

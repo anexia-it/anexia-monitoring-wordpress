@@ -1,9 +1,14 @@
 <?php
+namespace AnxMonitoring;
+
+use WP_REST_Response;
 
 /**
- * Class AnxMonitoring_Authorization
+ * Class Authorization
+ *
+ * @package AnxMonitoring
  */
-class AnxMonitoring_Authorization {
+class Authorization {
 
     /**
      * Simple token based authorization check
@@ -14,16 +19,17 @@ class AnxMonitoring_Authorization {
     public static function checkAccessToken($request) {
         $params = $request->get_params();
 
+        // Access token must be in GET params
+        if (!isset($params['ACCESS_TOKEN'])) {
+            return false;
+        }
+
         // Access token must be configured
         if (!defined('ANX_MONITORING_ACCESS_TOKEN')) {
             return false;
         }
 
-        // Access token must be configured
-        if (!isset($params['ACCESS_TOKEN'])) {
-            return false;
-        }
-
+        // Check if access token is correct
         if ($params['ACCESS_TOKEN'] !== ANX_MONITORING_ACCESS_TOKEN) {
             return false;
         }

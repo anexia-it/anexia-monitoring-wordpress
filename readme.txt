@@ -1,4 +1,4 @@
-=== Anexia monitoring ===
+=== Anexia Monitoring ===
 Contributors: anxhnezbeda
 License: MIT
 
@@ -11,7 +11,7 @@ is alive and working correctly.
 
 The plugin registers some custom REST endpoints which can be used for monitoring. Make sure that the
 **ANX_MONITORING_ACCESS_TOKEN** is defined, since this is used for authorization. The endpoints will return a 401
-HTTP_STATUS code if the token is not define dor invalid, and a 200.
+HTTP_STATUS code if the token is not defined or invalid, and a 200.
 
 = Version monitoring of core, plugins and themes =
 

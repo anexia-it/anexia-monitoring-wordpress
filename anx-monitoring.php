@@ -4,7 +4,7 @@ Plugin Name: Anexia Monitoring
 Plugin URI: https://github.com/anx-hnezbeda/anexia-monitoring-wordpress
 Description: A WordPress plugin used to monitor updates for core, plugins and themes. It can be also used to check if the website
 is alive and working correctly.
-Version: 1.1
+Version: 1.1.1
 Author: Anexia
 Author URI: http://www.anexia-it.com
 Text Domain: anx-monitoring
@@ -23,12 +23,6 @@ if ( !function_exists( 'add_action' ) ) {
 include_once('modules/Authorization.php');
 include_once('modules/VersionMonitoring.php');
 include_once('modules/LiveMonitoring.php');
-
-/**
- * CORS Headers
- */
-header("Access-Control-Allow-Origin: *");
-header("Access-Control-Allow-Credentials: true");
 
 /**
  * Register custom REST API endpoints
